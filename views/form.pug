@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Form
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css', integrity='sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N', crossorigin='anonymous')
+  body
+  
+    form.container(action='/postdata', method='post')
+      h2 Contact Form
+      .form
+        .form-group.col-md-6
+          label(for='inputEmail4') Name
+          input.form-control(type='text', name='name', placeholder='Name' required)
+        .form-group.col-md-6
+          label(for='inputEmail4') Email
+          input.form-control(type='email', name='email', placeholder='Email' required)
+        .form-group.col-md-6
+          label(for='inputPassword4') Subject
+          input.form-control(type='text', row='2', name='subject', placeholder='Subject' required)
+      .form-group.col-md-6
+        label(for='validationTextarea') Comments
+        textarea.form-control(name='comments', placeholder='Comments' required)
+        .invalid-feedback Please enter a message in the textarea.
+      button.btn.btn-primary(type='submit') Contact Us
+    br
+    include footer.pug
